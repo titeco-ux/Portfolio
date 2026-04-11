@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro — Product Designer & Project Manager</title>
+  <meta name="description" content="Product Designer and Project Manager bridging user-centric design with Agile execution. Specializing in end-to-end product lifecycles, Design Systems, and team optimization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <a href="index.html" class="navbar__logo">Pedro.</a>
+        <div class="navbar__links" role="list">
+          <a href="index.html" class="active" role="listitem">Home</a>
+          <a href="projects.html" role="listitem">Projects</a>
+          <a href="about.html" role="listitem">About Me</a>
+        </div>
+        <button class="navbar__hamburger" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About Me</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__text fade-in">
+          <h1 class="hero__title" id="hero-title">Product Designer<br>&amp; Project Manager</h1>
+          <p class="hero__description">I build scalable digital products by bridging the gap between user-centric design and high-velocity Agile execution. Specializing in end-to-end product lifecycles, Design Systems, and team optimization.</p>
+          <div class="hero__buttons">
+            <a href="projects.html" class="btn-primary">View Projects →</a>
+            <button class="btn-secondary" id="open-contact">Contact Me</button>
+          </div>
+        </div>
+        <div class="hero__image fade-in" aria-hidden="true">
+          <img src="assets/images/IMG_5802.JPG" alt="Pedro, Product Designer & Project Manager">
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects-section" aria-labelledby="projects-heading">
+        <h2 class="visually-hidden" id="projects-heading">Selected Projects</h2>
+        <div class="divider"></div>
+
+        <!-- Project 01 — Veturmusic -->
+        <article class="project-row project-row--invert fade-in" aria-labelledby="proj1-title">
+          <div class="project-row__text">
+            <span class="project-row__number">01</span>
+            <h3 class="project-row__title" id="proj1-title">Veturmusic</h3>
+            <p class="project-row__subtitle">Scaling Music Distribution in the Icelandic Market</p>
+            <p class="project-row__tags">UX Design &nbsp;·&nbsp; Project Management &nbsp;·&nbsp; API Integration</p>
+            <a href="veturmusic.html" class="btn-primary btn-primary--sm">View project →</a>
+          </div>
+          <div class="project-row__image">
+            <img src="assets/images/Group 19.png" alt="Veturmusic project — music distribution platform interface">
+          </div>
+        </article>
+
+        <!-- Project 02 — Structure IQ -->
+        <article class="project-row project-row--invert fade-in" aria-labelledby="proj2-title">
+          <div class="project-row__text">
+            <span class="project-row__number">02</span>
+            <h3 class="project-row__title" id="proj2-title">Structure IQ</h3>
+            <p class="project-row__subtitle">SaaS Platform for Satellite-Based Structural Monitoring</p>
+            <p class="project-row__tags">UX Design &nbsp;·&nbsp; Research &nbsp;·&nbsp; Data Visualization</p>
+            <a href="structureiq.html" class="btn-primary btn-primary--sm">View project →</a>
+          </div>
+          <div class="project-row__image">
+            <img src="assets/images/Group 23.png" alt="Structure IQ project — structural monitoring platform interface">
+          </div>
+        </article>
+
+        <div class="divider"></div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <p class="footer__copy">Pedro — Product Designer &amp; Project Manager</p>
+      <div class="footer__right">
+        <a href="https://www.linkedin.com/in/pedro-oliveira-b005162bb/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Visit Pedro's LinkedIn profile">LinkedIn ↗</a>
+        <button class="footer__contact" id="open-contact-footer">Contact Me</button>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal__close" id="close-contact" aria-label="Close contact form">✕</button>
+      <h2 class="modal__title" id="modal-title">Get in touch</h2>
+      <p class="modal__subtitle">Send me a message and I'll get back to you soon.</p>
+      <form class="modal__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><input name="bot-field"></p>
+        <div class="modal__field">
+          <label for="contact-name">Name</label>
+          <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="modal__field">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="modal__field">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+'use strict';
+
+// --- Config ---
+const SCROLL_THRESHOLD = 20;
+
+// --- DOM Elements ---
+const navbar = document.getElementById('navbar');
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const fadeEls = document.querySelectorAll('.fade-in');
+
+// --- Utilities ---
+function debounce(fn, delay) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn(...args), delay);
+  };
+}
+
+// --- Features ---
+
+function handleNavbarScroll() {
+  if (!navbar) return;
+  navbar.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
+}
+
+function toggleMobileMenu() {
+  if (!mobileMenu || !menuToggle) return;
+  const isOpen = mobileMenu.classList.toggle('open');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+}
+
+function closeMobileMenuOnLink() {
+  if (!mobileMenu) return;
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      if (menuToggle) {
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
+// Intersection Observer for fade-in elements
+function initFadeIn() {
+  if (!fadeEls.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  fadeEls.forEach(el => observer.observe(el));
+}
+
+// Highlight active nav link based on current page
+function setActiveNavLink() {
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.navbar__links a').forEach(link => {
+    const href = link.getAttribute('href');
+    link.classList.toggle('active', href === currentPage);
+  });
+}
+
+// --- Event Listeners ---
+window.addEventListener('scroll', debounce(handleNavbarScroll, 8));
+
+if (menuToggle) {
+  menuToggle.addEventListener('click', toggleMobileMenu);
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenu || !menuToggle) return;
+  if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// --- Lightbox ---
+function initLightbox() {
+  // Inject lightbox into DOM
+  const lightbox = document.createElement('div');
+  lightbox.id = 'lightbox';
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <button class="lightbox__close" aria-label="Close image">✕</button>
+    <img src="" alt="">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('img');
+  const lightboxClose = lightbox.querySelector('.lightbox__close');
+
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+  }
+
+  // Make all content images zoomable
+  document.querySelectorAll('.content-row__image img, .image-grid__item img, .brief-image img').forEach(img => {
+    img.classList.add('zoomable');
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+  });
+}
+
+// --- Contact Modal ---
+function initContactModal() {
+  const modal = document.getElementById('contact-modal');
+  if (!modal) return;
+
+  const openers = [
+    document.getElementById('open-contact'),
+    document.getElementById('open-contact-footer'),
+  ].filter(Boolean);
+
+  const closer = document.getElementById('close-contact');
+
+  function openModal() {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  openers.forEach(btn => btn.addEventListener('click', openModal));
+  if (closer) closer.addEventListener('click', closeModal);
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
+// --- Init ---
+function init() {
+  handleNavbarScroll();
+  initFadeIn();
+  closeMobileMenuOnLink();
+  setActiveNavLink();
+  initContactModal();
+  initLightbox();
+}
+
+document.addEventListener('DOMContentLoaded', init);
