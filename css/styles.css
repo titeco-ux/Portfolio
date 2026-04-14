@@ -3,6 +3,14 @@
    styles.css
    ========================================================== */
 
+@font-face {
+  font-family: 'Raillinc';
+  src: url('../assets/fonts/Raillinc 2.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ----------------------------------------------------------
    1. CSS CUSTOM PROPERTIES
    ---------------------------------------------------------- */
@@ -23,7 +31,7 @@
   --color-btn-secondary: #eaeaea;
 
   /* Typography */
-  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Raillinc', sans-serif;
   --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
 
   /* Font Sizes */
@@ -363,14 +371,6 @@ h1, h2, h3, h4 {
   margin-top: calc(var(--navbar-h) * -1);
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  pointer-events: none;
-  z-index: 0;
-}
 
 .hero__canvas {
   position: absolute;
@@ -398,8 +398,9 @@ h1, h2, h3, h4 {
 }
 
 .hero__title {
+  font-family: 'Raillinc', sans-serif;
   font-size: var(--text-6xl);
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1.05;
   color: #0d0d0d;
 }
@@ -496,7 +497,7 @@ h1, h2, h3, h4 {
   align-items: stretch;
   gap: var(--space-11);
   padding: var(--space-11) var(--section-pad-x);
-  background-color: #D9D9D9;
+  background-color: var(--color-bg);
 }
 
 .about-snapshot__text {
@@ -718,7 +719,8 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 var(--section-pad-x);
+  padding: var(--navbar-h) var(--section-pad-x) 0;
+  margin-top: calc(var(--navbar-h) * -1);
   background-image: url('../assets/images/myworkhero.png');
   background-size: cover;
   background-position: center;
@@ -747,6 +749,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: calc(var(--navbar-h) * -1);
   justify-content: center;
   gap: var(--space-5);
   padding: 10rem var(--section-pad-x) 8.75rem;
@@ -773,6 +776,7 @@ h1, h2, h3, h4 {
   gap: var(--space-5);
   max-width: 900px;
   width: 100%;
+  padding-top: var(--navbar-h);
 }
 
 .cs-hero__overline {
@@ -1078,8 +1082,9 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: flex-start;
   gap: 5rem;
-  padding: var(--space-11) var(--section-pad-x);
+  padding: calc(var(--navbar-h) + var(--space-11)) var(--section-pad-x) var(--space-11);
   background-color: var(--color-bg);
+  margin-top: calc(var(--navbar-h) * -1);
 }
 
 .about-hero__text {
@@ -1548,7 +1553,7 @@ h1, h2, h3, h4 {
   .work-intro {
     height: auto;
     min-height: 360px;
-    padding: 4rem var(--section-pad-x);
+    padding: calc(var(--navbar-h) + 3rem) var(--section-pad-x) 3rem;
   }
 
   /* Case study */
@@ -1702,7 +1707,7 @@ h1, h2, h3, h4 {
   .work-intro {
     height: auto;
     min-height: 280px;
-    padding: 3rem var(--section-pad-x);
+    padding: calc(var(--navbar-h) + 2rem) var(--section-pad-x) 2rem;
     justify-content: flex-end;
   }
 
