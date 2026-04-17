@@ -469,3 +469,82 @@
   align-self: stretch;
   background-color: #FF3F1A;
 }
+
+/* ==========================================================
+   MOBILE RESPONSIVE — ≤ 768px
+   ========================================================== */
+@media (max-width: 768px) {
+
+  /* --- Case study columns --- */
+  .cs-right,
+  .cs-right-col,
+  .cs-left-col {
+    width: 100%;
+    border-right: none;
+    border-left: none;
+    border-bottom: 2px solid #131313;
+  }
+
+  .cs-row-inverted {
+    flex-direction: column;
+  }
+
+  /* --- Right text block --- */
+  .cs-right__text {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  /* --- Image divs — need fixed height on mobile --- */
+  .cs-v2,
+  .cs-v3,
+  .cs-v4,
+  .cs-v5 {
+    height: 260px;
+    flex: none;
+    width: 100%;
+  }
+
+  .cs-dark-block {
+    height: 80px;
+    flex: none;
+  }
+
+  /* --- Gallery --- */
+  .cs-gallery-col {
+    flex-direction: row;
+  }
+
+  .cs-gallery-img {
+    height: 200px;
+    flex: 1;
+  }
+
+  /* --- About CV divider — vertical → horizontal --- */
+  .about-col-divider {
+    flex: none;
+    width: 100%;
+    height: 4px;
+    align-self: unset;
+  }
+
+  /* --- About CV rows --- */
+  .about-cv-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .about-cv-company {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .about-cv-date {
+    width: 100%;
+  }
+
+  /* --- Pattern div on hero sections --- */
+  .cs-pattern {
+    height: 160px;
+    flex: none;
+  }
+}

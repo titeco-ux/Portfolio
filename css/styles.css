@@ -2717,3 +2717,82 @@ body.dark-theme .footer__contact:hover {
 .footer__cta:hover {
   background-color: #FF3F1A;
 }
+
+/* ==========================================================
+   MOBILE RESPONSIVE — ≤ 768px
+   ========================================================== */
+@media (max-width: 768px) {
+
+  /* --- Navbar --- */
+  .navbar__links-box { display: none; }
+  .navbar__hamburger { display: flex; }
+
+  /* --- Hero --- */
+  .hero__main {
+    flex-direction: column;
+  }
+
+  .hero__block--dark {
+    flex: none;
+    height: 140px;
+    overflow: hidden;
+  }
+
+  .hero__block--title {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .hero__title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  /* --- Section rows --- */
+  .s2__row2 {
+    flex-direction: column;
+  }
+
+  .s2__left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #131313;
+    flex-shrink: unset;
+  }
+
+  .s2__div5 {
+    height: 220px;
+    flex: none;
+  }
+
+  .s2__div5-img {
+    height: 220px;
+  }
+
+  .s2__tags {
+    font-size: var(--text-sm);
+  }
+
+  /* --- Footer --- */
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .footer__left {
+    border-right: none;
+    border-bottom: 2px solid #131313;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .site-footer .navbar__links-box {
+    display: flex;
+    width: 100%;
+  }
+
+  .site-footer .navbar__link {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .site-footer .navbar__link:first-child {
+    border-left: none;
+  }
+}
