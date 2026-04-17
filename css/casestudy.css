@@ -548,3 +548,23 @@
     flex: none;
   }
 }
+
+/* --- New section layout (sections 2–4) --- */
+.cs-full-heading {
+  width: 100%;
+  flex-shrink: 0;
+  border-bottom: 2px solid #131313;
+  border-right: none;
+}
+
+.cs-content-row {
+  flex: 1;
+  min-height: 0;
+}
+
+.cs-full-dark {
+  width: 100%;
+  flex: none;
+  height: 80px;
+  border-top: 2px solid #131313;
+}

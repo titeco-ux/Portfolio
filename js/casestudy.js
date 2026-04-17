@@ -70,8 +70,8 @@ function initCsSectionSlide() {
       const sectionStart = i * vh;
       const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
       const opacity = 1 - progress;
-      const scale   = 1 - progress * 0.1;
-      const slideX  = progress * 120;
+      const scale   = 1 - progress * 0.04;
+      const slideX  = progress * 20;
       inner.style.opacity   = opacity;
       inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
     });
