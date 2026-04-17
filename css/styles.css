@@ -2796,3 +2796,8 @@ body.dark-theme .footer__contact:hover {
     border-left: none;
   }
 }
+
+.s2__footer-dark {
+  flex: none;
+  height: var(--hero-role-h);
+}

@@ -338,6 +338,34 @@ function initSectionSlide() {
   update();
 }
 
+// --- Smooth scroll to end of hero when Projects link clicked ---
+function initProjectsLink() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  document.querySelectorAll('a[href="index.html#statement"], a[href="#statement"]').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = window.innerHeight;
+      const start  = window.scrollY;
+      const duration = 300;
+      const startTime = performance.now();
+
+      function ease(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function frame(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        window.scrollTo(0, start + (target - start) * ease(t));
+        if (t < 1) requestAnimationFrame(frame);
+      }
+
+      requestAnimationFrame(frame);
+    });
+  });
+}
+
 // --- Scroll to section by hash on load ---
 function initHashScroll() {
   const hash = window.location.hash;
@@ -363,6 +391,7 @@ function init() {
   initProjectTitleAnimation();
   initSectionSlide();
   initHashScroll();
+  initProjectsLink();
 }
 
 document.addEventListener('DOMContentLoaded', init);
