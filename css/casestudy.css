@@ -39,6 +39,12 @@
   align-items: flex-start !important;
 }
 
+.cs-text-center {
+  justify-content: center !important;
+  align-items: flex-start !important;
+  text-align: left;
+}
+
 .cs-text-block p {
   font-family: var(--font-body);
   font-size: var(--text-base);
@@ -68,8 +74,7 @@
 .cs-dark-block {
   background-color: #131313;
   border: 2px solid #131313;
-  height: 180px;
-  flex: none;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
