@@ -2641,6 +2641,16 @@ body.dark-theme .footer__contact:hover {
   border-left: 2px solid #131313;
 }
 
+.site-footer .navbar__link {
+  color: #eaeaea;
+  border-color: #131313;
+}
+
+.site-footer .navbar__link:hover {
+  background-color: #131313;
+  color: #eaeaea;
+}
+
 .footer__left {
   display: flex;
   flex-direction: column;
@@ -2654,7 +2664,7 @@ body.dark-theme .footer__contact:hover {
   font-family: 'Bebas Neue', sans-serif;
   font-size: var(--text-xl);
   font-weight: 400;
-  color: #131313;
+  color: #eaeaea;
   letter-spacing: 0.04em;
 }
 
@@ -2662,7 +2672,7 @@ body.dark-theme .footer__contact:hover {
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 400;
-  color: #131313;
+  color: #eaeaea;
   opacity: 0.5;
 }
 
