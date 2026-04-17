@@ -258,6 +258,86 @@ function initHeroDots() {
   });
 }
 
+// --- Letter-by-letter animation ---
+function animateByLetter(el, startDelay = 0, DELAY = 38) {
+  if (!el) return 0;
+  const segments = el.innerHTML.split(/(<br\s*\/?>)/i);
+  let i = startDelay;
+
+  el.innerHTML = segments.map(seg => {
+    if (/<br/i.test(seg)) return seg;
+    // Split into words and spaces, preserving whitespace tokens
+    return seg.split(/(\s+)/).map(token => {
+      if (/^\s+$/.test(token)) return token; // keep spaces as plain text
+      // Wrap word's letters in a no-break container
+      const chars = [...token].map(char => {
+        const delay = i++ * DELAY;
+        return `<span class="char" style="animation-delay:${delay}ms">${char}</span>`;
+      }).join('');
+      return `<span style="display:inline-block;white-space:nowrap">${chars}</span>`;
+    }).join('');
+  }).join('');
+
+  return i;
+}
+
+function initHeroLetterAnimation() {
+  animateByLetter(document.querySelector('.statement-section__text'));
+}
+
+
+// --- Project title slide-in on scroll ---
+function initProjectTitleAnimation() {
+  const sections = document.querySelectorAll('.s2, .s3');
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      } else {
+        // Remove so it re-animates when scrolled back in
+        entry.target.classList.remove('in-view');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(s => observer.observe(s));
+}
+
+// --- Section scale + fade on scroll ---
+function initSectionSlide() {
+  const pairs = [
+    { section: document.querySelector('.hero'),  inner: document.querySelector('.hero__main') },
+    { section: document.querySelector('.s2'),    inner: document.querySelector('.s2 .s2__main') },
+    { section: document.querySelector('.s3'),    inner: document.querySelector('.s3 .s2__main') },
+  ].filter(p => p.section && p.inner);
+
+  if (!pairs.length) return;
+
+  const vh = window.innerHeight;
+
+  pairs.forEach(p => {
+    p.inner.style.willChange = 'transform, opacity';
+  });
+
+  function update() {
+    const scrollY = window.scrollY;
+    pairs.forEach(({ inner }, i) => {
+      const sectionStart = i * vh;
+      const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
+      const opacity = 1 - progress;               // 1 → 0
+      const scale   = 1 - progress * 0.1;        // 1 → 0.9
+      const slideX  = progress * 120;             // 0 → 120px right
+      inner.style.opacity   = opacity;
+      inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
+    });
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
 // --- Init ---
 function init() {
   handleNavbarScroll();
@@ -267,6 +347,9 @@ function init() {
   initContactModal();
   initLightbox();
   initHeroDots();
+  initHeroLetterAnimation();
+  initProjectTitleAnimation();
+  initSectionSlide();
 }
 
 document.addEventListener('DOMContentLoaded', init);

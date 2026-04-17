@@ -3,179 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me — Pedro</title>
+  <title>About — Pedro</title>
   <meta name="description" content="Product Designer and Project Manager with 3+ years of experience. Background in Architecture. Currently at Bytenana.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/casestudy.css">
 </head>
-<body>
+<body id="top">
   <div class="site-wrapper">
 
     <!-- Navbar -->
-    <header class="hero-header">
+    <header class="site-header">
       <nav class="navbar" id="navbar" aria-label="Main navigation">
-        <a href="index.html" class="navbar__logo">Pedro.</a>
-        <div class="navbar__links" role="list">
-          <a href="index.html" role="listitem">Home</a>
-          <a href="projects.html" role="listitem">Projects</a>
-          <a href="about.html" class="active" role="listitem">About Me</a>
+        <div class="navbar__logo-box">
+          <a href="index.html#top" aria-label="Go to top">
+            <img src="assets/images/logo.png" alt="Pedro logo" class="navbar__logo-img">
+          </a>
+        </div>
+        <div class="navbar__links-box">
+          <a href="about.html" class="navbar__link active" role="listitem">
+            <img src="assets/images/material-symbols_background-replace.png" alt="" class="navbar__link-icon" aria-hidden="true">
+            About
+          </a>
+          <a href="index.html" class="navbar__link" role="listitem">
+            <img src="assets/images/mdi_files.png" alt="" class="navbar__link-icon" aria-hidden="true">
+            Projects
+          </a>
         </div>
         <button class="navbar__hamburger" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </nav>
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
+        <a href="index.html">Projects</a>
       </nav>
     </header>
 
     <main>
 
-      <!-- About Hero -->
-      <section class="about-hero fade-in" aria-labelledby="about-title">
-        <div class="about-hero__text">
-          <h1 class="about-hero__title" id="about-title">Product Orchestrator:<br>Bridging User Needs<br>&amp; Technical Execution</h1>
-          <p class="about-hero__para">I am a Product Designer and Project Manager with 3+ years of experience transforming complex logic into intuitive digital products. My background in Architecture provided me with a foundation in spatial navigation and structural systems, which I now apply to building scalable Design Systems and high-velocity Agile workflows.</p>
-          <p class="about-hero__para">I don't just design interfaces; I manage the entire product lifecycle to ensure business goals, technical feasibility, and user delight are in perfect alignment. Currently, I lead design and project coordination at Bytenana, where I've successfully increased team delivery speed by 25%.</p>
-        </div>
-        <div class="about-hero__image">
-          <img src="assets/images/IMG_5803.png" alt="Portrait of Pedro, Product Designer & Project Manager">
-        </div>
-      </section>
-
-      <!-- Experience Section -->
-      <section class="experience-section section" aria-labelledby="exp-heading">
-        <div class="section-inner">
-          <h2 class="section-heading" id="exp-heading" style="margin-bottom: 3rem;">Professional Experience</h2>
-
-          <div class="exp-item fade-in">
-            <span class="exp-item__date">July 2025 – Present</span>
-            <div class="exp-item__details">
-              <p class="exp-item__company">Bytenana</p>
-              <p class="exp-item__role">Product Designer &amp; Project Manager</p>
+      <!-- Section 1 — About Hero -->
+      <section class="s2" id="about-hero">
+        <div class="s2__main">
+          <div class="s2__row2">
+            <div class="s2__left">
+              <div class="s2__div2">
+                <span class="s2__number">—</span>
+                <h1 class="s2__project-title">Pedro Oliveira</h1>
+              </div>
+              <div class="s2__div3">
+                <p class="s2__tags">Role &nbsp;·&nbsp; Product Designer &amp; Project Manager</p>
+              </div>
+              <div class="s2__div3">
+                <p class="s2__tags">Based &nbsp;·&nbsp; Portugal</p>
+              </div>
+              <div class="s2__div3">
+                <p class="s2__tags">Currently &nbsp;·&nbsp; Bytenana</p>
+              </div>
+              <div class="s2__div4 cs-text-block">
+                <p>I am a Product Designer and Project Manager with 3+ years of experience transforming complex logic into intuitive digital products. My background in Architecture provided me with a foundation in spatial navigation and structural systems, which I now apply to building scalable Design Systems and high-velocity Agile workflows.</p>
+              </div>
             </div>
-          </div>
-
-          <div class="exp-item fade-in">
-            <span class="exp-item__date">Dec 2024 – June 2025</span>
-            <div class="exp-item__details">
-              <p class="exp-item__company">Bee Coders</p>
-              <p class="exp-item__role">UX/UI Designer</p>
-            </div>
-          </div>
-
-          <div class="exp-item fade-in" style="border-bottom: none;">
-            <span class="exp-item__date">Jan 2024 – Dec 2024</span>
-            <div class="exp-item__details">
-              <p class="exp-item__company">OlverTech / Apex App</p>
-              <p class="exp-item__role">Junior Product Designer</p>
+            <div class="cs-right">
+              <div class="cs-right__text">
+                <p>I don't just design interfaces — I manage the entire product lifecycle to ensure business goals, technical feasibility, and user delight are in perfect alignment. Currently, I lead design and project coordination at Bytenana, where I've successfully increased team delivery speed by 25%.</p>
+              </div>
+              <div class="s2__div5 cs-pattern"></div>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="divider"></div>
-
-      <!-- Education Section -->
-      <section class="education-section dark-section section" aria-labelledby="edu-heading">
-        <div class="section-inner">
-          <h2 class="section-heading" id="edu-heading" style="margin-bottom: 3rem;">Education &amp; Certifications</h2>
-
-          <div class="edu-item fade-in">
-            <span class="edu-item__year">2024</span>
-            <span class="edu-item__name">Professional Certificate in UX Design</span>
-            <span class="edu-item__institution">Google</span>
-          </div>
-
-          <div class="edu-item fade-in">
-            <span class="edu-item__year">2024</span>
-            <span class="edu-item__name">Enterprise Design Thinking</span>
-            <span class="edu-item__institution">IBM</span>
-          </div>
-
-          <div class="edu-item fade-in">
-            <span class="edu-item__year">2011 – 2017</span>
-            <span class="edu-item__name">B.Arch in Architecture and Urban Planning</span>
-            <span class="edu-item__institution">UNIFOR</span>
-          </div>
-
-          <div class="edu-item fade-in">
-            <span class="edu-item__year">2014 – 2015</span>
-            <span class="edu-item__name">Exchange Program — Architecture</span>
-            <span class="edu-item__institution">University of Salford, UK</span>
-          </div>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <!-- Skills Section -->
-      <section class="skills-section section" aria-labelledby="skills-heading">
-        <div class="section-inner">
-          <h2 class="section-heading" id="skills-heading" style="margin-bottom: 3rem;">The Toolkit</h2>
-
-          <div class="skills-grid">
-            <div class="skills-col fade-in">
-              <h3 class="skills-col__title">Design &amp; Research</h3>
-              <p class="skill-item">UX Research: User Interviews, Usability Testing, Journey Mapping</p>
-              <p class="skill-item">Design: Figma, Framer, Adobe Creative Suite, Procreate</p>
-              <p class="skill-item">Specialization: Wireframing, Prototyping, Design Systems</p>
+      <!-- Section 2 — Under Construction -->
+      <section class="s2 cs-s2 cs-under-construction">
+        <div class="s2__main">
+          <div class="s2__row2">
+            <div class="s2__left">
+              <div class="s2__div2">
+                <span class="s2__number">#</span>
+                <h2 class="s2__project-title">Under Construction</h2>
+              </div>
+              <div class="s2__div4 cs-text-block">
+                <p>This page is currently being built. Full experience, background, and contact details coming soon.</p>
+              </div>
             </div>
-            <div class="skills-col fade-in">
-              <h3 class="skills-col__title">Management &amp; Technical</h3>
-              <p class="skill-item">Agile &amp; PM: Agile Coordination, Kanban Optimization, Project Scoping</p>
-              <p class="skill-item">Technical: Design Systems, Handoff Documentation, HTML/CSS Literacy</p>
-              <p class="skill-item">Soft Skills: Analytical Thinking, Stakeholder Communication, Time Management</p>
-            </div>
+            <div class="s2__div5"></div>
           </div>
         </div>
       </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact" role="contentinfo">
-      <p class="footer__copy">Pedro — Product Designer &amp; Project Manager</p>
-      <div class="footer__right">
-        <a href="https://www.linkedin.com/in/pedro-oliveira-b005162bb/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Visit Pedro's LinkedIn profile">LinkedIn ↗</a>
-        <button class="footer__contact" id="open-contact-footer">Contact Me</button>
-      </div>
-    </footer>
-
-  </div>
-
-  <!-- Contact Modal -->
-  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal">
-      <button class="modal__close" id="close-contact" aria-label="Close contact form">✕</button>
-      <h2 class="modal__title" id="modal-title">Get in touch</h2>
-      <p class="modal__subtitle">Send me a message and I'll get back to you soon.</p>
-      <form class="modal__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact">
-        <p hidden><input name="bot-field"></p>
-        <div class="modal__field">
-          <label for="contact-name">Name</label>
-          <input type="text" id="contact-name" name="name" placeholder="Your name" required>
-        </div>
-        <div class="modal__field">
-          <label for="contact-email">Email</label>
-          <input type="email" id="contact-email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="modal__field">
-          <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="message" placeholder="Tell me about your project…" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message →</button>
-      </form>
-    </div>
   </div>
 
   <script src="js/main.js"></script>
+  <script src="js/casestudy.js"></script>
 </body>
 </html>

@@ -1,0 +1,373 @@
+/* ==========================================================
+   CASE STUDY — casestudy.css
+   ========================================================== */
+
+/* Right column wrapper */
+.cs-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.cs-right__text {
+  height: auto;
+  padding: var(--space-8) var(--section-x);
+  border-left: 2px solid #131313;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cs-right__text p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #131313;
+  text-align: left;
+  width: 100%;
+}
+
+/* Section stacking on case study pages */
+.cs-s2 {
+  z-index: 3 !important;
+}
+
+/* Text block inside div4 */
+.cs-text-block {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.cs-text-block p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #131313;
+}
+
+/* Right column wrapper for s2 on case study */
+.cs-right-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.cs-right-col .s2__div5 {
+  flex: none;
+  aspect-ratio: 1440 / 940;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.cs-dark-block {
+  background-color: #131313;
+  border: 2px solid #131313;
+  height: auto;
+  flex: 1;
+}
+
+/* v4 image div */
+.cs-v4 {
+  background-color: transparent !important;
+  background-image: url('../assets/images/v1.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+}
+
+/* Section 3 stacking */
+.cs-s3 {
+  z-index: 4 !important;
+}
+
+/* Inverted row — image on left */
+.cs-row-inverted {
+  flex-direction: row-reverse;
+}
+
+/* Left image column (for inverted layout) */
+.cs-left-col {
+  border-right: 2px solid #131313;
+  border-left: none !important;
+}
+
+/* v3 image */
+.cs-v3 {
+  background-color: transparent !important;
+  background-image: url('../assets/images/v2.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  aspect-ratio: 1440 / 914;
+  width: 100%;
+  flex: none;
+  padding: 3rem;
+}
+
+/* Font label block */
+.cs-font-label-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cs-font-label {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  line-height: 1.3;
+}
+
+.cs-font-label--medium {
+  font-weight: 500;
+}
+
+.cs-font-body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-size: var(--text-base) !important;
+  font-weight: 400;
+  color: #131313;
+  line-height: 1.75;
+}
+
+/* Helvetica Neue text */
+.cs-text-helvetica p,
+.cs-text-block.cs-text-helvetica p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #131313;
+}
+
+/* Section 4 */
+.cs-s4 {
+  z-index: 5 !important;
+}
+
+
+
+/* v2 image */
+.cs-v2 {
+  background-color: transparent !important;
+  background-image: url('../assets/images/v3.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  aspect-ratio: 1440 / 914;
+  width: 100%;
+  flex: none;
+  padding: 3rem;
+}
+
+/* Pattern div */
+.cs-pattern {
+  background-color: transparent !important;
+  background-image: url('../assets/images/Distort_pattern_blue.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Spinning disc on hover */
+@keyframes spinCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.s2__disc {
+  transition: none;
+}
+
+.s2__div4:hover .s2__disc {
+  animation: spinCW 1.2s linear infinite;
+}
+
+.cs-ext-link {
+  color: #131313;
+  text-decoration: underline;
+  transition: opacity 0.15s ease;
+}
+
+.cs-ext-link:hover {
+  opacity: 0.5;
+}
+
+/* --- Hero Section --- */
+.cs-hero {
+  width: 100%;
+  height: 100svh;
+  background-color: transparent;
+}
+
+.cs-hero__main {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #eaeaea;
+  transform-origin: top center;
+}
+
+/* Left column: project info */
+.cs-hero__left {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 40%;
+  flex-shrink: 0;
+  border-right: 2px solid #131313;
+}
+
+/* Title row */
+.cs-info--title {
+  padding: var(--space-8) var(--section-x) var(--space-6);
+  border-bottom: 2px solid #131313;
+  flex-shrink: 0;
+}
+
+.cs-hero__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 400;
+  color: #131313;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  animation: slideFromLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Info rows */
+.cs-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-5) var(--section-x);
+  border-bottom: 2px solid #131313;
+  flex-shrink: 0;
+}
+
+.cs-info__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: #131313;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cs-info__value {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: #131313;
+}
+
+.cs-info__link {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: #131313;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.cs-info__link:hover {
+  opacity: 0.5;
+}
+
+/* Right column */
+.cs-hero__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.cs-hero__desc {
+  flex: 1;
+  padding: var(--space-8) var(--section-x);
+  border-bottom: 2px solid #131313;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cs-hero__desc-text {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.75;
+  color: #131313;
+  max-width: 680px;
+}
+
+.cs-hero__dark {
+  background-color: #131313;
+  border: 2px solid #131313;
+  height: var(--hero-role-h);
+  flex-shrink: 0;
+}
+
+/* Section 5 */
+.cs-s5 {
+  z-index: 6 !important;
+}
+
+.cs-gallery-col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.cs-gallery-img {
+  flex: 1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+  border-bottom: 2px solid #131313;
+}
+
+.cs-gallery-img:last-child {
+  border-bottom: none;
+}
+
+.cs-v5 {
+  background-color: transparent !important;
+  background-image: url('../assets/images/v5.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  aspect-ratio: 1440 / 1053;
+  width: 100%;
+  flex: none;
+  padding: 3rem;
+}
+
+.cs-v6 {
+  background-image: url('../assets/images/v6.png');
+}
+
+.cs-v7 {
+  background-image: url('../assets/images/v7.png');
+}

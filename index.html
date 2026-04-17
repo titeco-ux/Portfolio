@@ -7,31 +7,41 @@
   <meta name="description" content="Product Designer and Project Manager bridging user-centric design with Agile execution. Specializing in end-to-end product lifecycles, Design Systems, and team optimization.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body id="top">
   <div class="site-wrapper">
 
     <!-- Navbar -->
-    <header class="hero-header">
+    <header class="site-header">
       <nav class="navbar" id="navbar" aria-label="Main navigation">
-        <a href="index.html" class="navbar__logo">Pedro.</a>
-        <div class="navbar__links" role="list">
-          <a href="index.html" class="active" role="listitem">Home</a>
-          <a href="projects.html" role="listitem">Projects</a>
-          <a href="about.html" role="listitem">About Me</a>
+
+        <div class="navbar__logo-box">
+          <a href="index.html#top" aria-label="Go to top">
+            <img src="assets/images/logo.png" alt="Pedro logo" class="navbar__logo-img">
+          </a>
         </div>
+
+        <div class="navbar__links-box">
+          <a href="about.html" class="navbar__link" role="listitem">
+            <img src="assets/images/material-symbols_background-replace.png" alt="" class="navbar__link-icon" aria-hidden="true">
+            About
+          </a>
+          <a href="veturmusic.html" class="navbar__link" role="listitem">
+            <img src="assets/images/mdi_files.png" alt="" class="navbar__link-icon" aria-hidden="true">
+            Projects
+          </a>
+        </div>
+
         <button class="navbar__hamburger" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </nav>
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html">About</a>
+        <a href="veturmusic.html">Projects</a>
       </nav>
     </header>
 
@@ -39,91 +49,105 @@
 
       <!-- Hero Section -->
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__text fade-in">
-          <h1 class="hero__title" id="hero-title">Hi, I'm Pedro Oliveira.<br>Product Designer.</h1>
+        <div class="hero__main">
+
+          <!-- Div 1: Title -->
+          <div class="hero__block hero__block--title">
+            <h1 class="hero__title" id="hero-title">Pedro Oliveira</h1>
+          </div>
+
+          <!-- Div 2: Dark -->
+          <div class="hero__block hero__block--dark"></div>
+
+          <!-- Div 3: Role + Arrow -->
+          <div class="hero__block hero__block--role">
+            <a href="#statement" class="hero__role-link">
+              <span class="hero__role">Product Designer</span>
+              <img src="assets/images/arrow.png" alt="" class="hero__arrow" aria-hidden="true">
+            </a>
+          </div>
+
+          <!-- Div 4: Dark -->
+          <div class="hero__block hero__block--dark"></div>
+
         </div>
       </section>
 
-      <!-- About Snapshot Section -->
-      <section class="about-snapshot fade-in" aria-labelledby="snapshot-title">
-        <div class="about-snapshot__text">
-          <span class="about-snapshot__overline">About me</span>
-          <h2 class="about-snapshot__title" id="snapshot-title">Design that works.</h2>
-          <p class="about-snapshot__para">I'm Pedro, a Product Designer and Project Manager with a focus on end-to-end product development. I bridge the gap between user needs and business goals — from early research and wireframes through to shipped, scalable solutions.</p>
-          <p class="about-snapshot__para">With a background spanning UX design, Design Systems, and Agile project management, I've worked with teams across music tech, SaaS, and structural engineering to turn complex problems into clear, usable products.</p>
-          <div class="hero__buttons" style="margin-top: var(--space-2);">
-            <a href="projects.html" class="btn-primary">View Projects →</a>
-            <button class="btn-secondary" id="open-contact">Contact Me</button>
+      <!-- Section 2 — Veturmusic -->
+      <section class="s2" id="statement">
+        <div class="s2__main">
+
+          <!-- Row 2: left + right -->
+          <div class="s2__row2">
+
+            <!-- Left column: div2 + div3 + div4 + div6 stacked -->
+            <div class="s2__left">
+              <div class="s2__div2">
+                <span class="s2__number">#01</span>
+                <h3 class="s2__project-title">Veturmusic</h3>
+              </div>
+              <div class="s2__div3">
+                <p class="s2__tags">UX Design &nbsp;·&nbsp; Project Management &nbsp;·&nbsp; API Integration</p>
+              </div>
+              <div class="s2__div6">
+                <a href="veturmusic.html" class="s2__cta-link">
+                  <span class="s2__cta-text">View Project</span>
+                  <img src="assets/images/arrow.png" alt="" class="s2__arrow" aria-hidden="true">
+                </a>
+              </div>
+              <div class="s2__div4">
+                <img src="assets/images/vaadin_disc.png" alt="Veturmusic disc icon" class="s2__disc">
+              </div>
+            </div>
+
+            <!-- Right column: dark fill -->
+            <div class="s2__div5"></div>
+
           </div>
-        </div>
-        <div class="about-snapshot__image">
-          <img src="assets/images/IMG_5803.png" alt="Pedro, Product Designer & Project Manager">
+
         </div>
       </section>
 
-      <!-- Trusted By Section -->
-      <section class="trusted-by" aria-label="Trusted by">
-        <div class="trusted-by__text">
-          <span class="trusted-by__overline">Selected Projects</span>
-          <h2 class="trusted-by__title">Work trusted by innovative teams.</h2>
-          <p class="trusted-by__desc">From music tech to structural engineering — I've partnered with forward-thinking companies to deliver products that are both beautifully designed and strategically sound.</p>
+      <!-- Section 3 — Structure IQ -->
+      <section class="s2 s3" id="structureiq">
+        <div class="s2__main">
+
+          <!-- Row 1: colored bar -->
+          <div class="s2__div1"></div>
+
+          <!-- Row 2: left + right -->
+          <div class="s2__row2">
+
+            <!-- Left column: div2 + div3 + div4 + div6 stacked -->
+            <div class="s2__left">
+              <div class="s2__div2">
+                <span class="s2__number">#02</span>
+                <h3 class="s2__project-title">Structure IQ</h3>
+              </div>
+              <div class="s2__div3">
+                <p class="s2__tags">UX Design &nbsp;·&nbsp; Research &nbsp;·&nbsp; Data Visualization</p>
+              </div>
+              <div class="s2__div6">
+                <a href="structureiq.html" class="s2__cta-link">
+                  <span class="s2__cta-text">View Project</span>
+                  <img src="assets/images/arrow.png" alt="" class="s2__arrow" aria-hidden="true">
+                </a>
+              </div>
+              <div class="s2__div4">
+                <img src="assets/images/ph_bridge.png" alt="Structure IQ bridge icon" class="s2__disc">
+              </div>
+            </div>
+
+            <!-- Right column: dark fill -->
+            <div class="s2__div5"></div>
+
+          </div>
+
         </div>
-        <div class="trusted-by__logos">
-          <img src="assets/images/Image-1.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-2.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-3.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-4.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-5.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-6.png" alt="Client logo" class="trusted-by__logo">
-          <img src="assets/images/Image-7.png" alt="Client logo" class="trusted-by__logo">
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section class="projects-section" aria-labelledby="projects-heading">
-        <div class="divider"></div>
-
-        <!-- Project 01 — Veturmusic -->
-        <article class="project-row project-row--invert project-row--vetur fade-in" aria-labelledby="proj1-title">
-          <div class="project-row__text">
-            <span class="project-row__number">01</span>
-            <h3 class="project-row__title" id="proj1-title">Veturmusic</h3>
-            <p class="project-row__subtitle">Scaling Music Distribution in the Icelandic Market</p>
-            <p class="project-row__tags">UX Design &nbsp;·&nbsp; Project Management &nbsp;·&nbsp; API Integration</p>
-            <a href="veturmusic.html" class="btn-primary btn-primary--sm">View project →</a>
-          </div>
-          <div class="project-row__preview" aria-hidden="true">
-            <img src="assets/images/vetur 1.png" alt="">
-          </div>
-        </article>
-
-        <!-- Project 02 — Structure IQ -->
-        <article class="project-row project-row--invert project-row--structureiq fade-in" aria-labelledby="proj2-title">
-          <div class="project-row__text">
-            <span class="project-row__number">02</span>
-            <h3 class="project-row__title" id="proj2-title">Structure IQ</h3>
-            <p class="project-row__subtitle">SaaS Platform for Satellite-Based Structural Monitoring</p>
-            <p class="project-row__tags">UX Design &nbsp;·&nbsp; Research &nbsp;·&nbsp; Data Visualization</p>
-            <a href="structureiq.html" class="btn-primary btn-primary--sm">View project →</a>
-          </div>
-          <div class="project-row__preview" aria-hidden="true">
-            <img src="assets/images/struc 1.png" alt="">
-          </div>
-        </article>
-
-        <div class="divider"></div>
       </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-      <p class="footer__copy">Pedro — Product Designer &amp; Project Manager</p>
-      <div class="footer__right">
-        <a href="https://www.linkedin.com/in/pedro-oliveira-b005162bb/" target="_blank" rel="noopener noreferrer" class="footer__linkedin" aria-label="Visit Pedro's LinkedIn profile">LinkedIn ↗</a>
-        <button class="footer__contact" id="open-contact-footer">Contact Me</button>
-      </div>
-    </footer>
 
   </div>
 
