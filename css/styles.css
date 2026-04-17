@@ -2633,7 +2633,7 @@ body.dark-theme .footer__contact:hover {
   align-items: stretch;
   justify-content: space-between;
   border-top: 2px solid #131313;
-  background-color: var(--color-bg);
+  background-color: #FF3F1A;
   padding: 0;
 }
 
