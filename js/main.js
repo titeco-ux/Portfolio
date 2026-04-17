@@ -338,6 +338,18 @@ function initSectionSlide() {
   update();
 }
 
+// --- Scroll to section by hash on load ---
+function initHashScroll() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const target = document.querySelector(hash);
+  if (!target) return;
+  const sections = [document.querySelector('.hero'), ...document.querySelectorAll('.s2')].filter(Boolean);
+  const index = sections.indexOf(target);
+  if (index < 0) return;
+  requestAnimationFrame(() => window.scrollTo(0, index * window.innerHeight));
+}
+
 // --- Init ---
 function init() {
   handleNavbarScroll();
@@ -350,6 +362,7 @@ function init() {
   initHeroLetterAnimation();
   initProjectTitleAnimation();
   initSectionSlide();
+  initHashScroll();
 }
 
 document.addEventListener('DOMContentLoaded', init);

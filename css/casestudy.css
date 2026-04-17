@@ -68,8 +68,8 @@
 .cs-dark-block {
   background-color: #131313;
   border: 2px solid #131313;
-  height: auto;
-  flex: 1;
+  height: 180px;
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,6 +90,7 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-origin: content-box;
+  flex: 1;
 }
 
 /* Section 3 stacking */
@@ -117,9 +118,8 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-origin: content-box;
-  aspect-ratio: 1440 / 914;
   width: 100%;
-  flex: none;
+  flex: 1;
   padding: 3rem;
 }
 
@@ -176,9 +176,8 @@
   background-repeat: no-repeat;
   background-clip: content-box;
   background-origin: content-box;
-  aspect-ratio: 1440 / 914;
   width: 100%;
-  flex: none;
+  flex: 1;
   padding: 3rem;
 }
 
@@ -379,4 +378,89 @@
 
 .cs-v7 {
   background-image: url('../assets/images/v7.png');
+}
+
+/* About page — CV blocks */
+.about-cv-block {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #131313;
+}
+
+.about-cv-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: var(--space-4) var(--section-x);
+  border-bottom: 2px solid #131313;
+}
+
+.about-cv-company {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #131313;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.about-cv-role {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  flex: 1;
+}
+
+.about-cv-date {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  opacity: 0.45;
+  white-space: nowrap;
+}
+
+/* About page — Toolkit */
+.about-toolkit-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-4) var(--section-x);
+  border-bottom: 2px solid #131313;
+}
+
+.about-toolkit-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #131313;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.about-toolkit-value {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  opacity: 0.65;
+}
+
+/* About hero heading — dark background */
+.about-hero__heading {
+  background-color: #131313 !important;
+  border-color: #131313 !important;
+}
+
+.about-hero__heading .s2__number,
+.about-hero__heading .s2__project-title {
+  color: #eaeaea !important;
+}
+
+/* About section 2 — column divider */
+.about-col-divider {
+  flex: 0 0 20px;
+  align-self: stretch;
+  background-color: #FF3F1A;
 }
