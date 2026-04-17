@@ -597,7 +597,8 @@ h1, h2, h3, h4 {
 }
 
 /* Section 3 — bridge slides right then back on hover */
-#structureiq .s2__disc:hover {
+#structureiq .s2__disc:hover,
+#siq-hero .s2__disc:hover {
   animation: slideLeftRight 0.8s ease infinite;
 }
 
