@@ -70,6 +70,15 @@
   border: 2px solid #131313;
   height: auto;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cs-dark-img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
 }
 
 /* v4 image div */

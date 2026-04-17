@@ -326,9 +326,9 @@ function initSectionSlide() {
     pairs.forEach(({ inner }, i) => {
       const sectionStart = i * vh;
       const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
-      const opacity = 1 - progress;               // 1 → 0
-      const scale   = 1 - progress * 0.1;        // 1 → 0.9
-      const slideX  = progress * 120;             // 0 → 120px right
+      const opacity = 1 - progress;
+      const scale   = 1 - progress * 0.1;
+      const slideX  = progress * 120;
       inner.style.opacity   = opacity;
       inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
     });

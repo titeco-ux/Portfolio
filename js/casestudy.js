@@ -47,14 +47,12 @@ function initCsLightbox() {
   });
 }
 
-// --- Case study section snap scroll (auto-advance on single scroll) ---
+// --- Case study section scroll animation (scale + fade + slide) ---
 function initCsSectionSlide() {
   const sections = [...document.querySelectorAll('.s2')];
   if (!sections.length) return;
 
-  let currentIndex = 0;
-  let isAnimating  = false;
-  let vh = window.innerHeight;
+  const vh = window.innerHeight;
 
   sections.forEach(s => {
     const inner = s.querySelector('.s2__main');
@@ -64,74 +62,23 @@ function initCsSectionSlide() {
     }
   });
 
-  window.addEventListener('resize', () => { vh = window.innerHeight; });
-
-  function applyProgress(i, progress) {
-    const inner = sections[i]?.querySelector('.s2__main');
-    if (!inner) return;
-    inner.style.opacity   = 1 - progress;
-    inner.style.transform = `scale(${1 - progress * 0.1}) translateX(${progress * 120}px)`;
+  function update() {
+    const scrollY = window.scrollY;
+    sections.forEach((section, i) => {
+      const inner = section.querySelector('.s2__main');
+      if (!inner) return;
+      const sectionStart = i * vh;
+      const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
+      const opacity = 1 - progress;
+      const scale   = 1 - progress * 0.1;
+      const slideX  = progress * 120;
+      inner.style.opacity   = opacity;
+      inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
+    });
   }
 
-  function ease(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
-  function goTo(index) {
-    if (isAnimating || index < 0 || index >= sections.length) return;
-    isAnimating = true;
-
-    const startY    = window.scrollY;
-    const targetY   = index * vh;
-    const duration  = 750;
-    const startTime = performance.now();
-
-    function frame(now) {
-      const t     = Math.min((now - startTime) / duration, 1);
-      const y     = startY + (targetY - startY) * ease(t);
-      window.scrollTo(0, y);
-      sections.forEach((_, i) => {
-        applyProgress(i, Math.max(0, Math.min(1, (y - i * vh) / vh)));
-      });
-      if (t < 1) {
-        requestAnimationFrame(frame);
-      } else {
-        currentIndex = index;
-        isAnimating  = false;
-      }
-    }
-
-    requestAnimationFrame(frame);
-  }
-
-  // Snap to nearest section on load
-  const nearest = Math.round(window.scrollY / vh);
-  currentIndex = Math.max(0, Math.min(nearest, sections.length - 1));
-  sections.forEach((_, i) => {
-    applyProgress(i, Math.max(0, Math.min(1, (window.scrollY - i * vh) / vh)));
-  });
-
-  // Wheel
-  window.addEventListener('wheel', e => {
-    e.preventDefault();
-    if (isAnimating) return;
-    goTo(e.deltaY > 0 ? currentIndex + 1 : currentIndex - 1);
-  }, { passive: false });
-
-  // Keyboard arrows
-  window.addEventListener('keydown', e => {
-    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goTo(currentIndex + 1); }
-    if (e.key === 'ArrowUp'   || e.key === 'PageUp')   { e.preventDefault(); goTo(currentIndex - 1); }
-  });
-
-  // Touch
-  let touchY = 0;
-  window.addEventListener('touchstart', e => { touchY = e.touches[0].clientY; }, { passive: true });
-  window.addEventListener('touchend',   e => {
-    if (isAnimating) return;
-    const diff = touchY - e.changedTouches[0].clientY;
-    if (Math.abs(diff) > 40) goTo(diff > 0 ? currentIndex + 1 : currentIndex - 1);
-  }, { passive: true });
+  window.addEventListener('scroll', update, { passive: true });
+  update();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
