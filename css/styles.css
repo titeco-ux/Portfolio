@@ -847,13 +847,21 @@ html {
   transform-origin: top center;
 }
 
+/* Top row: title + role side by side */
+.hero__top-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
 /* Div 1: Title */
 .hero__block--title {
   display: flex;
   align-items: flex-start;
   padding: var(--space-6) var(--section-x);
   background-color: #eaeaea;
-  flex-shrink: 0;
+  flex: 1;
   border: 2px solid #131313;
 }
 
@@ -870,18 +878,11 @@ html {
 .hero__block--role {
   display: flex;
   align-items: stretch;
-  border-top: 2px solid #FF3F1A;
-  border-bottom: 2px solid #FF3F1A;
+  border: 2px solid #FF3F1A;
   background-color: #FF3F1A;
   flex-shrink: 0;
-  height: var(--hero-role-h);
 }
 
-/* Div 4: same height as div 3 */
-.hero__block--dark:last-child {
-  flex: none;
-  height: var(--hero-role-h);
-}
 
 @keyframes charFadeIn {
   from {
