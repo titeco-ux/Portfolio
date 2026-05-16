@@ -27,11 +27,18 @@
             <img src="assets/images/material-symbols_background-replace.png" alt="" class="navbar__link-icon" aria-hidden="true">
             About
           </a>
-          <a href="index.html#statement" class="navbar__link" role="listitem">
+          <a href="projects.html" class="navbar__link" role="listitem">
             <img src="assets/images/mdi_files.png" alt="" class="navbar__link-icon" aria-hidden="true">
             Projects
           </a>
         </div>
+
+        <div class="navbar__progress" aria-hidden="true">
+          <div class="navbar__progress-fill" id="scroll-progress"></div>
+          <span class="navbar__progress-section" id="section-number">#01</span>
+          <a href="#" class="navbar__progress-top" id="scroll-top-link" aria-hidden="true">Back to top ↑</a>
+        </div>
+
         <button class="navbar__hamburger" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -39,19 +46,19 @@
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="index.html">Projects</a>
+        <a href="projects.html">Projects</a>
       </nav>
     </header>
 
     <main>
 
-      <!-- Section 1 — Hero -->
+      <!-- #01 — Hero -->
       <section class="s2" id="siq-hero">
         <div class="s2__main">
           <div class="s2__row2">
+
             <div class="s2__left">
-              <div class="s2__div2">
-                <span class="s2__number">#02</span>
+              <div class="s2__div2 about-hero__heading">
                 <h1 class="s2__project-title">Structure IQ</h1>
               </div>
               <div class="s2__div3">
@@ -63,34 +70,194 @@
               <div class="s2__div3">
                 <p class="s2__tags">Role &nbsp;·&nbsp; UX Design &nbsp;·&nbsp; Research &nbsp;·&nbsp; Data Visualization</p>
               </div>
+              <div class="s2__div3">
+                <p class="s2__tags">Page &nbsp;·&nbsp; <a href="https://structureiq.ai/" target="_blank" rel="noopener noreferrer" class="cs-ext-link">structureiq.ai ↗</a></p>
+              </div>
               <div class="s2__div4">
                 <img src="assets/images/ph_bridge.png" alt="Structure IQ bridge icon" class="s2__disc">
               </div>
             </div>
+
             <div class="cs-right">
               <div class="cs-right__text">
-                <p>Structure IQ is an advanced SaaS platform that enables engineering specialists to monitor the structural integrity of bridges, buildings, and critical infrastructure using satellite-derived data. The challenge was to take a raw, technical MVP and transform it into a sophisticated professional tool that prioritises precision and rapid decision-making.</p>
+                <p>Structure IQ is a SaaS platform that enables engineering specialists to monitor the structural integrity of bridges, buildings, and critical infrastructure using satellite-derived data. Bytenana was brought in to take their technical demo and turn it into a production-ready web app — connecting real data, rebuilding the interface, and delivering three distinct user experiences from the ground up.</p>
               </div>
-              <div class="s2__div5 cs-pattern"></div>
+              <div class="s2__div5 cs-siq-login"></div>
             </div>
+
           </div>
         </div>
       </section>
 
-      <!-- Section 2 — Under Construction -->
-      <section class="s2 cs-s2 cs-under-construction">
+      <!-- #02 — The Problem -->
+      <section class="s2 cs-s2" id="siq-problem">
         <div class="s2__main">
           <div class="s2__row2">
+
+            <!-- Left: heading + text -->
             <div class="s2__left">
-              <div class="s2__div2">
-                <span class="s2__number">#</span>
-                <h2 class="s2__project-title">Under Construction</h2>
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">The Problem</h2>
               </div>
-              <div class="s2__div4 cs-text-block">
-                <p>This case study is currently being prepared. Check back soon for the full breakdown of research, design decisions, and outcomes.</p>
+              <div class="s2__div4 cs-text-block cs-text-center">
+                <p>StructureIQ had a working demo but not a product. The existing interface ran on hardcoded data — built to prove a concept visually, not to connect to real infrastructure. Two problems needed solving at once: wiring the interface to their actual database, and redesigning the experience entirely. None of the data was organized in a way that let a specialist act on it quickly. The task was to assess everything that mattered, define the information hierarchy, and rebuild around three very different types of users.</p>
               </div>
             </div>
-            <div class="s2__div5"></div>
+
+            <!-- Right: two demo screenshots stacked -->
+            <div class="cs-col-imgs">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-img-4.png" alt="StructureIQ demo dashboard">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-img-1.png" alt="StructureIQ demo user profile">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #03 — Early Explorations -->
+      <section class="s2 cs-s3" id="siq-explorations">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">Early Explorations</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-helvetica cs-text-center">
+                <p class="cs-font-body">Before touching screens, I read the briefing and worked directly with the StructureIQ team to map what mattered most. The key question wasn't visual — it was structural: what does a general administrator need to see versus an engineer on-site versus a client checking status? Initial drawings were prepared and submitted for client approval, establishing the information hierarchy and user flows before any development began. Getting sign-off at this stage gave the dev team a clear target and kept scope from shifting mid-build.</p>
+              </div>
+            </div>
+
+            <!-- Right: image -->
+            <div class="cs-col-img">
+              <img src="assets/images/s-early-designs.png" alt="Early design explorations">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #04 — Design Work -->
+      <section class="s2 cs-s4" id="siq-design">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">Design Work</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-center">
+                <p>The platform required three distinct interfaces — General Administrator, Client, and Engineer — each with different data access levels and decision-making needs. The design challenge was organizing dense technical data (gauges, maps, charts, sensor lists) into surfaces that felt fast and unambiguous. The central problem was the alert system: sensor health monitoring had to surface structural anomalies anywhere in the application the moment they were triggered. We designed and tested multiple alert models with the engineers who would actually use the product, landing on a solution that was immediate without being disruptive to the workflow.</p>
+              </div>
+            </div>
+
+            <!-- Right: two images stacked -->
+            <div class="cs-col-imgs">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-raw-data.png" alt="StructureIQ dashboard">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-alert.png" alt="StructureIQ alert system">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #05 — Design System -->
+      <section class="s2 cs-s5" id="siq-system">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">Design System</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-helvetica cs-text-center">
+                <p class="cs-font-body">Three user types, one coherent product. Building the General Administrator, Client, and Engineer interfaces in parallel meant consistency wasn't optional — any drift between surfaces would create confusion for users who crossed between them. I built a modular design system covering the full range of the platform: data visualization components (gauges, charts, maps), alert and sensor status states, navigation patterns, and table layouts. The dev team built from this system in parallel, which eliminated back-and-forth and kept handoff time low.</p>
+              </div>
+            </div>
+
+            <!-- Right: two images stacked -->
+            <div class="cs-col-imgs">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-sensor.png" alt="Sensor monitoring">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-design-system.png" alt="Design system">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #06 — Results -->
+      <section class="s2 cs-s6" id="siq-results">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text + results list -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">Results</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-center cs-text-auto">
+                <p>From a proof-of-concept demo to a production-ready platform. The StructureIQ team highlighted the speed of delivery and the quality of communication throughout — direct client engagement, clear deliverables, and zero ambiguity at handoff.</p>
+              </div>
+              <div class="cs-results-block">
+                <span class="cs-results-eyebrow">What shipped</span>
+                <div class="cs-results-list">
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">01</span>
+                    <span class="cs-results-text"><strong>General Administrator interface</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">02</span>
+                    <span class="cs-results-text"><strong>Client interface</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">03</span>
+                    <span class="cs-results-text"><strong>Engineer interface</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">04</span>
+                    <span class="cs-results-text"><strong>Global alert system</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">05</span>
+                    <span class="cs-results-text"><strong>Design system</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">06</span>
+                    <span class="cs-results-text"><strong>Information hierarchy framework</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">↑</span>
+                    <span class="cs-results-text"><strong>Client satisfaction</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: two images stacked -->
+            <div class="cs-col-imgs">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-assets-2.png" alt="StructureIQ assets">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/s-assets.png" alt="StructureIQ assets">
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

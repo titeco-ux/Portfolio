@@ -29,10 +29,16 @@
             <img src="assets/images/material-symbols_background-replace.png" alt="" class="navbar__link-icon" aria-hidden="true">
             About
           </a>
-          <a href="index.html#statement" class="navbar__link" role="listitem">
+          <a href="projects.html" class="navbar__link" role="listitem">
             <img src="assets/images/mdi_files.png" alt="" class="navbar__link-icon" aria-hidden="true">
             Projects
           </a>
+        </div>
+
+        <div class="navbar__progress" aria-hidden="true">
+          <div class="navbar__progress-fill" id="scroll-progress"></div>
+          <span class="navbar__progress-section" id="section-number">#01</span>
+          <a href="#" class="navbar__progress-top" id="scroll-top-link" aria-hidden="true">Back to top ↑</a>
         </div>
 
         <button class="navbar__hamburger" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -42,21 +48,19 @@
       <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="index.html">Projects</a>
+        <a href="projects.html">Projects</a>
       </nav>
     </header>
 
     <main>
 
-      <!-- Section 1 — Veturmusic Hero -->
+      <!-- #01 — Hero -->
       <section class="s2" id="vetur-hero">
         <div class="s2__main">
-
           <div class="s2__row2">
 
             <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
-                <span class="s2__number">#01</span>
                 <h1 class="s2__project-title">Veturmusic</h1>
               </div>
               <div class="s2__div3">
@@ -78,119 +82,198 @@
 
             <div class="cs-right">
               <div class="cs-right__text">
-                <p>At Veturmusic, I owned the full product lifecycle from research to delivery, working across both Project Management and Product Design. On the PM side, I structured and implemented a granular Agile/Kanban environment that eliminated scope creep, kept the team aligned on high-value delivery, and served as the primary point of contact for all stakeholder communication — ultimately driving a 25% increase in team delivery speed and allowing advanced stretch features to ship ahead of schedule.</p>
+                <p>At Veturmusic, I owned the full product lifecycle — research, design, and delivery — working across both Product Design and Project Management. The task: replace a manual, fragmented distribution process with a platform that artists and administrators could actually trust.</p>
               </div>
               <div class="s2__div5 cs-pattern"></div>
             </div>
 
           </div>
-
         </div>
       </section>
 
-      <!-- Section 2 — Design Work -->
-      <section class="s2 cs-s2">
+      <!-- #02 — The Problem -->
+      <section class="s2 cs-s2" id="problem">
         <div class="s2__main">
-
           <div class="s2__row2">
 
-            <!-- Left: image -->
-            <div class="cs-right-col cs-left-col">
+            <!-- Left: heading + text -->
+            <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
-                <span class="s2__number">#02</span>
+                <h2 class="s2__project-title">The Problem</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-center">
+                <p>Veturmusic's original workflow had three steps: a landing page, a login, and a form. Artists submitted music, files landed in a WordPress database, and an administrator manually distributed to streaming platforms — one by one, no tracking, no validation, no visibility for the artist after submission.</p>
+              </div>
+            </div>
+
+            <!-- Right: image -->
+            <div class="cs-col-img">
+              <img src="assets/images/old-process.png" alt="Old distribution process">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #03 — Early Explorations -->
+      <section class="s2 cs-s3" id="explorations">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
+                <h2 class="s2__project-title">Early Explorations</h2>
+              </div>
+              <div class="s2__div4 cs-text-block cs-text-helvetica cs-text-center">
+                <p class="cs-font-body">The first screens established the core information architecture before any visual polish. The dashboard needed to answer two questions at a glance: how many releases exist, and what state are they in? Getting this data model right — what an artist needs to see versus what an admin needs to act on — shaped every design decision that followed.</p>
+              </div>
+            </div>
+
+            <!-- Right: two images stacked -->
+            <div class="cs-col-imgs">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/early-1.png" alt="Early exploration">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/early-2.png" alt="Early exploration">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #04 — Design Work -->
+      <section class="s2 cs-s4" id="design">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <!-- Left: heading + text -->
+            <div class="s2__left">
+              <div class="s2__div2 about-hero__heading">
                 <h2 class="s2__project-title">Design Work</h2>
               </div>
-              <div class="s2__div5 cs-v4"></div>
-              <div class="cs-dark-block"></div>
-            </div>
-
-            <!-- Right: text -->
-            <div class="s2__left">
               <div class="s2__div4 cs-text-block cs-text-center">
-                <p>On the design side, I replaced a fragmented, manual distribution process with a unified, desktop-class web experience built around the needs of artists and administrators alike. This included a step-by-step metadata release wizard that ensured every release met global platform standards on the first attempt, a high-fidelity analytics dashboard for real-time market tracking, and a comprehensive component library that significantly cut design-to-development handoff time. The result was a scalable platform that successfully bridged the gap between Icelandic independent artists and global streaming providers — and earned me a promotion to Project Manager.</p>
+                <p>The final platform replaced every manual step with a structured, user-centered flow. A guided metadata wizard ensured every release met global platform standards before submission — eliminating the most common failure point. A real-time dashboard gave artists full visibility from draft to live. On the admin side, a centralized panel brought approval workflows, distribution management, and Label Grid API integration under one roof, replacing the manual handoff entirely.</p>
               </div>
             </div>
 
-          </div>
+            <!-- Right: image -->
+            <div class="cs-col-img">
+              <img src="assets/images/v1.png" alt="Design work">
+            </div>
 
+          </div>
         </div>
       </section>
 
-      <!-- Section 3 — Design System (inverted) -->
-      <section class="s2 cs-s3">
+      <!-- #05 — Design System -->
+      <section class="s2 cs-s5" id="system">
         <div class="s2__main">
+          <div class="s2__row2">
 
-          <div class="s2__row2 cs-row-inverted">
-
-            <!-- Left: image column -->
-            <div class="cs-right-col cs-left-col">
+            <!-- Left: heading + text -->
+            <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
-                <span class="s2__number">#03</span>
                 <h2 class="s2__project-title">Design System</h2>
               </div>
-              <div class="s2__div5 cs-v3"></div>
-              <div class="cs-dark-block"></div>
-            </div>
-
-            <!-- Right: text -->
-            <div class="s2__left">
               <div class="s2__div4 cs-text-block cs-text-helvetica cs-text-center">
-                <p class="cs-font-body">Rather than designing screens in isolation, I built a modular design system from the ground up — a library of adaptive, reusable components that worked across both the artist portal and the admin dashboard. This meant every new feature could be assembled from existing building blocks, keeping the product visually coherent and dramatically reducing time from design to implementation.</p>
+                <p class="cs-font-body">Rather than designing screens in isolation, I built a modular design system from the ground up — a library of adaptive, reusable components that worked across both the artist portal and the admin dashboard. Every new feature could be assembled from existing building blocks, keeping the product visually coherent and reducing time from design to implementation.</p>
               </div>
             </div>
 
-          </div>
+            <!-- Right: image -->
+            <div class="cs-col-img">
+              <img src="assets/images/v2.png" alt="Design system">
+            </div>
 
+          </div>
         </div>
       </section>
 
-      <!-- Section 4 — v2 -->
-      <section class="s2 cs-s4">
-        <div class="s2__main cs-s4__main">
-
+      <!-- #06 — Results -->
+      <section class="s2 cs-s6" id="results">
+        <div class="s2__main">
           <div class="s2__row2">
 
-            <!-- Left: image -->
-            <div class="cs-right-col cs-left-col">
+            <!-- Left: heading + text + results list -->
+            <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
-                <span class="s2__number">#04</span>
                 <h2 class="s2__project-title">Results</h2>
               </div>
-              <div class="s2__div5 cs-v2"></div>
-              <div class="cs-dark-block"></div>
+              <div class="s2__div4 cs-text-block cs-text-center cs-text-auto">
+                <p>From a WordPress form to a platform artists and administrators can trust. Every step that was previously manual, untracked, or invisible now has a structured, automated counterpart.</p>
+              </div>
+              <div class="cs-results-block">
+                <span class="cs-results-eyebrow">What shipped</span>
+                <div class="cs-results-list">
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">01</span>
+                    <span class="cs-results-text"><strong>Metadata release wizard</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">02</span>
+                    <span class="cs-results-text"><strong>Artist dashboard</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">03</span>
+                    <span class="cs-results-text"><strong>Admin panel</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">04</span>
+                    <span class="cs-results-text"><strong>Label Grid integration</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">05</span>
+                    <span class="cs-results-text"><strong>Analytics dashboard</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">06</span>
+                    <span class="cs-results-text"><strong>Component library</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">07</span>
+                    <span class="cs-results-text"><strong>25% faster team delivery</strong></span>
+                  </div>
+                  <div class="cs-results-item">
+                    <span class="cs-results-marker">↑</span>
+                    <span class="cs-results-text"><strong>Promoted to Project Manager</strong></span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Right: text -->
-            <div class="s2__left cs-s4__left">
-              <div class="s2__div4 cs-text-block cs-s4__text">
-                <p>A scalable platform that successfully bridged the gap between Icelandic independent artists and global streaming providers — and earned me a promotion to Project Manager.</p>
+            <!-- Right: image -->
+            <div class="cs-col-img">
+              <img src="assets/images/v3.png" alt="Results">
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- #07 — Gallery -->
+      <section class="s2 cs-s7" id="gallery">
+        <div class="s2__main">
+          <div class="s2__row2">
+
+            <div class="cs-right-col cs-left-col">
+              <div class="cs-img-wrap" style="border-top: 2px solid #131313;">
+                <img src="assets/images/v5.png" alt="Gallery">
+              </div>
+            </div>
+
+            <div class="s2__left cs-gallery-col" id="gallery">
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/v6.png" alt="Gallery">
+              </div>
+              <div class="cs-img-inline-wrap">
+                <img src="assets/images/v7.png" alt="Gallery">
               </div>
             </div>
 
           </div>
-
-        </div>
-      </section>
-
-      <!-- Section 5 — Gallery -->
-      <section class="s2 cs-s5">
-        <div class="s2__main">
-
-          <div class="s2__row2">
-
-            <!-- Left: v5 image -->
-            <div class="cs-right-col cs-left-col">
-              <div class="s2__div5 cs-v5"></div>
-            </div>
-
-            <!-- Right: v6 + v7 stacked -->
-            <div class="s2__left cs-gallery-col">
-              <div class="cs-gallery-img cs-v6"></div>
-              <div class="cs-gallery-img cs-v7"></div>
-            </div>
-
-          </div>
-
         </div>
       </section>
 

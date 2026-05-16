@@ -203,6 +203,60 @@ h1, h2, h3, h4 {
   border-bottom: 2px solid #131313;
 }
 
+/* Navbar scroll progress bar */
+.navbar__progress {
+  flex: 1;
+  align-self: stretch;
+  border-left: 2px solid #131313;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar__progress-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background-color: #131313;
+}
+
+.navbar__progress-section {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 2;
+  letter-spacing: 0.05em;
+}
+
+.navbar__progress-top {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+}
+
+.navbar__progress-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Logo box */
 .navbar__logo-box {
   display: flex;
@@ -453,6 +507,22 @@ h1, h2, h3, h4 {
 
 
 
+/* --- Scroll snap --- */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--navbar-h);
+}
+
+.hero,
+.s2 {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.site-footer {
+  scroll-snap-align: start;
+}
+
 /* --- Section 2 — Veturmusic --- */
 .s2 {
   position: sticky;
@@ -552,13 +622,11 @@ h1, h2, h3, h4 {
   letter-spacing: 0.02em;
   line-height: 1;
   opacity: 0;
-  transform: translateX(-160px);
-  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .s2.in-view .s2__project-title {
   opacity: 1;
-  transform: translateX(0);
 }
 
 .s2__div3 {
@@ -596,7 +664,7 @@ h1, h2, h3, h4 {
   animation: spin 1.2s linear infinite;
 }
 
-/* Section 3 — bridge slides right then back on hover */
+/* Bridge slides left↔right on hover */
 #structureiq .s2__disc:hover,
 #siq-hero .s2__disc:hover {
   animation: slideLeftRight 0.8s ease infinite;
@@ -607,6 +675,7 @@ h1, h2, h3, h4 {
   50%  { transform: translateX(30px); }
   100% { transform: translateX(0); }
 }
+
 
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -847,8 +916,6 @@ h1, h2, h3, h4 {
   white-space: nowrap;
   width: 100%;
   display: block;
-  animation: slideFromLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  opacity: 0;
 }
 
 .hero__title .char,

@@ -32,15 +32,31 @@ function initCsLightbox() {
     if (e.key === 'Escape') overlay.click();
   });
 
-  // Make image divs clickable
-  const selectors = ['.cs-v1','.cs-v2','.cs-v3','.cs-v4','.cs-v5','.cs-v6','.cs-v7','.cs-pattern'];
-  document.querySelectorAll(selectors.join(',')).forEach(el => {
+  // Background-image divs (StructureIQ)
+  const bgSelectors = [
+    '.cs-v1','.cs-v2','.cs-v3','.cs-v4','.cs-v5','.cs-v6','.cs-v7',
+    '.cs-siq-1','.cs-siq-raw','.cs-siq-sensor',
+    '.cs-siq-img-1','.cs-siq-img-2','.cs-siq-img-3','.cs-siq-img-4',
+    '.cs-siq-warn','.cs-siq-alert','.cs-siq-ds','.cs-siq-raw-2',
+    '.cs-siq-login','.cs-siq-assets','.cs-siq-assets-2'
+  ];
+  document.querySelectorAll(bgSelectors.join(',')).forEach(el => {
     el.style.cursor = 'zoom-in';
     el.addEventListener('click', () => {
       const bg = window.getComputedStyle(el).backgroundImage;
       const url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
       if (!url || url === 'none') return;
       img.src = url;
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // <img> tag wrappers (Veturmusic + StructureIQ early)
+  document.querySelectorAll('.cs-img-wrap img, .cs-img-inline-wrap img, .cs-siq-early-wrap img, .cs-col-img img, .cs-col-imgs img').forEach(el => {
+    el.style.cursor = 'zoom-in';
+    el.addEventListener('click', () => {
+      img.src = el.src;
       overlay.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });

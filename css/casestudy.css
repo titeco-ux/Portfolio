@@ -2,6 +2,8 @@
    CASE STUDY — casestudy.css
    ========================================================== */
 
+
+
 /* Right column wrapper */
 .cs-right {
   flex: 1;
@@ -567,4 +569,445 @@
   flex: none;
   height: 80px;
   border-top: 2px solid #131313;
+}
+
+/* z-index for new sections */
+.cs-s6 { z-index: 7 !important; }
+.cs-s7 { z-index: 8 !important; }
+
+/* Prevent s2__div4 from growing when content follows below it */
+.cs-text-auto {
+  flex: none !important;
+}
+
+/* StructureIQ images */
+.cs-siq-1 {
+  background-image: url('../assets/images/s1.png');
+  background-color: #eaeaea;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  flex: 1;
+}
+
+/* StructureIQ warn + alert */
+.cs-siq-warn {
+  background-image: url('../assets/images/s-warn.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+.cs-siq-alert {
+  background-image: url('../assets/images/s-alert.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* StructureIQ design system */
+.cs-siq-ds {
+  background-image: url('../assets/images/s-design-system.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* StructureIQ sensor image */
+.cs-siq-sensor {
+  background-image: url('../assets/images/s-sensor.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  width: 100%;
+  flex: 1;
+  padding: 2rem;
+}
+
+/* StructureIQ raw data dashboard */
+.cs-siq-raw {
+  background-image: url('../assets/images/s-raw-data.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  width: 100%;
+  flex: 1;
+  padding: 2rem;
+}
+
+/* StructureIQ login */
+.cs-siq-login {
+  background-image: url('../assets/images/s-login.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* StructureIQ assets-2 */
+.cs-siq-assets-2 {
+  background-image: url('../assets/images/s-assets-2.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* StructureIQ assets */
+.cs-siq-assets {
+  background-image: url('../assets/images/s-assets.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* StructureIQ raw-2 (reused slot) */
+.cs-siq-raw-2 {
+  background-image: url('../assets/images/s-login.png');
+  background-color: #131313;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 1.5rem;
+}
+
+/* Multi-image right column */
+.cs-col-imgs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Full-height image column (right side, when text is in left column) */
+.cs-col-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: #eaeaea;
+}
+
+.cs-col-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Generic image wrappers for case study sections */
+.cs-img-wrap {
+  flex: 1;
+  border: 2px solid #131313;
+  border-top: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #eaeaea;
+}
+
+.cs-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Inline image wrap — for stacked images inside a column */
+.cs-img-inline-wrap {
+  flex: 1;
+  border-bottom: 2px solid #131313;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #eaeaea;
+}
+
+.cs-img-inline-wrap:last-of-type {
+  border-bottom: none;
+}
+
+.cs-img-inline-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* StructureIQ early designs */
+.cs-siq-early-wrap {
+  flex: 1;
+  border: 2px solid #131313;
+  border-top: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaeaea;
+  padding: 2rem;
+}
+
+.cs-siq-early-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* StructureIQ demo screenshots */
+.cs-siq-img-1 { background-image: url('../assets/images/s-img-1.png'); background-color: #f0f0f0; }
+.cs-siq-img-2 { background-image: url('../assets/images/s-img-2.png'); background-color: #f0f0f0; }
+.cs-siq-img-3 { background-image: url('../assets/images/s-img-3.png'); background-color: #f0f0f0; }
+.cs-siq-img-4 { background-image: url('../assets/images/s-img-4.png'); background-color: #f0f0f0; }
+
+/* Old process image */
+.cs-old-process {
+  background-image: url('../assets/images/old-process.png');
+  background-color: #eaeaea;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  width: 100%;
+  flex: 1;
+  padding: 2rem;
+}
+
+/* ---- Early explorations images ---- */
+.cs-early-1 {
+  background-image: url('../assets/images/early-1.png');
+  background-color: #1a1a1a;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 2rem;
+  flex: 1 !important;
+  aspect-ratio: unset !important;
+}
+
+.cs-early-2-block {
+  background-image: url('../assets/images/early-2.png');
+  background-color: #1a1a1a;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-clip: content-box;
+  background-origin: content-box;
+  padding: 2rem;
+  flex: 1;
+  min-height: 200px;
+  border-bottom: 2px solid #131313;
+}
+
+/* ---- Before flow diagram ---- */
+.cs-before-diagram {
+  padding: var(--space-6) var(--section-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: 2px solid #131313;
+  border-top: none;
+  flex: 1;
+}
+
+.cs-before-label-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #131313;
+  opacity: 0.45;
+}
+
+.cs-before-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+  row-gap: 1.5rem;
+}
+
+.cs-before-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.cs-before-box {
+  border: 1.5px solid #131313;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: #131313;
+  white-space: nowrap;
+}
+
+.cs-before-sublabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #131313;
+  opacity: 0.4;
+  text-align: center;
+}
+
+.cs-before-arrow {
+  font-size: 1rem;
+  color: #131313;
+  opacity: 0.35;
+  padding-top: 0.65rem;
+  flex-shrink: 0;
+}
+
+.cs-pain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(19,19,19,0.15);
+  margin-top: auto;
+}
+
+.cs-pain-item {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  opacity: 0.6;
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.cs-pain-item::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+}
+
+/* ---- Results list ---- */
+.cs-results-block {
+  padding: var(--space-6) var(--section-x);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border: 2px solid #131313;
+  border-top: none;
+  flex: 1;
+}
+
+.cs-results-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #131313;
+  opacity: 0.45;
+}
+
+.cs-results-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-results-item {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(19,19,19,0.12);
+  align-items: baseline;
+}
+
+.cs-results-item:first-child {
+  border-top: 1px solid rgba(19,19,19,0.12);
+}
+
+.cs-results-marker {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: #131313;
+  opacity: 0.35;
+}
+
+.cs-results-text {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: #131313;
+  line-height: 1.55;
+}
+
+.cs-results-text strong {
+  font-weight: 600;
+}
+
+/* Mobile additions */
+@media (max-width: 768px) {
+  .cs-early-1 {
+    height: 240px;
+    flex: none !important;
+    aspect-ratio: unset !important;
+  }
+
+  .cs-early-2-block {
+    height: 240px;
+    flex: none;
+  }
+
+  .cs-before-box {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+    white-space: normal;
+  }
+
+  .cs-results-block {
+    overflow-y: visible;
+  }
 }

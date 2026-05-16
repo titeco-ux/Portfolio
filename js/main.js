@@ -366,6 +366,48 @@ function initProjectsLink() {
   });
 }
 
+// --- Navbar scroll progress bar ---
+function initScrollProgress() {
+  const fill = document.getElementById('scroll-progress');
+  const topLink = document.getElementById('scroll-top-link');
+  const sectionLabel = document.getElementById('section-number');
+  const sections = [...document.querySelectorAll('.s2')];
+  if (!fill) return;
+
+  function update() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    fill.style.width = pct + '%';
+
+    if (topLink) {
+      const atBottom = pct >= 98;
+      topLink.classList.toggle('visible', atBottom);
+      topLink.setAttribute('aria-hidden', String(!atBottom));
+    }
+
+    if (sectionLabel && sections.length) {
+      const vh = window.innerHeight;
+      const idx = Math.min(Math.floor(window.scrollY / vh), sections.length - 1);
+      sectionLabel.textContent = '#' + String(idx + 1).padStart(2, '0');
+    }
+  }
+
+  if (topLink) {
+    topLink.addEventListener('click', e => {
+      e.preventDefault();
+      const html = document.documentElement;
+      html.style.scrollSnapType = 'none';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const restoreSnap = () => { html.style.scrollSnapType = ''; };
+      window.addEventListener('scrollend', restoreSnap, { once: true });
+      setTimeout(restoreSnap, 1200);
+    });
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
 // --- Scroll to section by hash on load ---
 function initHashScroll() {
   const hash = window.location.hash;
@@ -392,6 +434,7 @@ function init() {
   initSectionSlide();
   initHashScroll();
   initProjectsLink();
+  initScrollProgress();
 }
 
 document.addEventListener('DOMContentLoaded', init);

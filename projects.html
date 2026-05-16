@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro — Product Designer & Project Manager</title>
-  <meta name="description" content="Product Designer and Project Manager bridging user-centric design with Agile execution. Specializing in end-to-end product lifecycles, Design Systems, and team optimization.">
+  <title>Projects — Pedro</title>
+  <meta name="description" content="Projects by Pedro Oliveira — Product Designer & Project Manager.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
             <img src="assets/images/material-symbols_background-replace.png" alt="" class="navbar__link-icon" aria-hidden="true">
             About
           </a>
-          <a href="projects.html" class="navbar__link" role="listitem">
+          <a href="projects.html" class="navbar__link active" role="listitem">
             <img src="assets/images/mdi_files.png" alt="" class="navbar__link-icon" aria-hidden="true">
             Projects
           </a>
@@ -53,42 +53,12 @@
 
     <main>
 
-      <!-- Hero Section -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero__main">
-
-          <!-- Div 1: Title -->
-          <div class="hero__block hero__block--title">
-            <h1 class="hero__title" id="hero-title">Pedro Oliveira</h1>
-          </div>
-
-          <!-- Div 2: Dark -->
-          <div class="hero__block hero__block--dark">
-            <img src="assets/images/h1.png" alt="" class="s2__div5-img" aria-hidden="true">
-          </div>
-
-          <!-- Div 3: Role + Arrow -->
-          <div class="hero__block hero__block--role">
-            <a href="#statement" class="hero__role-link">
-              <span class="hero__role">Product Designer</span>
-              <img src="assets/images/arrow.png" alt="" class="hero__arrow" aria-hidden="true">
-            </a>
-          </div>
-
-          <!-- Div 4: Dark -->
-          <div class="hero__block hero__block--dark"></div>
-
-        </div>
-      </section>
-
-      <!-- Section 2 — Veturmusic -->
+      <!-- Section 1 — Veturmusic -->
       <section class="s2" id="statement">
         <div class="s2__main">
 
-          <!-- Row 2: left + right -->
           <div class="s2__row2">
 
-            <!-- Left column: div2 + div3 + div4 + div6 stacked -->
             <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
                 <h3 class="s2__project-title">Veturmusic</h3>
@@ -107,30 +77,25 @@
               </div>
             </div>
 
-            <!-- Right column: dark fill -->
             <div class="s2__div5">
               <img src="assets/images/v8.png" alt="" class="s2__div5-img" aria-hidden="true">
             </div>
 
           </div>
 
-          <!-- Dark block — same height as hero last block -->
           <div class="hero__block hero__block--dark s2__footer-dark"></div>
 
         </div>
       </section>
 
-      <!-- Section 3 — Structure IQ -->
+      <!-- Section 2 — Structure IQ -->
       <section class="s2 s3" id="structureiq">
         <div class="s2__main">
 
-          <!-- Row 1: colored bar -->
           <div class="s2__div1"></div>
 
-          <!-- Row 2: left + right -->
           <div class="s2__row2">
 
-            <!-- Left column: div2 + div3 + div4 + div6 stacked -->
             <div class="s2__left">
               <div class="s2__div2 about-hero__heading">
                 <h3 class="s2__project-title">Structure IQ</h3>
@@ -149,14 +114,12 @@
               </div>
             </div>
 
-            <!-- Right column: dark fill -->
             <div class="s2__div5">
               <img src="assets/images/s1.png" alt="" class="s2__div5-img" aria-hidden="true">
             </div>
 
           </div>
 
-          <!-- Dark block — same height as hero last block -->
           <div class="hero__block hero__block--dark s2__footer-dark"></div>
 
         </div>
@@ -180,7 +143,6 @@
   <!-- Contact Modal -->
   <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal">
-      
       <div class="modal__header"><h2 class="modal__title" id="modal-title">Get in touch</h2><button class="modal__close" id="close-contact" aria-label="Close contact form">✕</button></div>
       <p class="modal__subtitle">Send me a message and I'll get back to you soon.</p>
       <form class="modal__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -203,7 +165,6 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
