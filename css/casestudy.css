@@ -477,6 +477,62 @@
    ========================================================== */
 @media (max-width: 768px) {
 
+  /* --- Section layout: stack left + right --- */
+  .s2__row2 {
+    flex-direction: column;
+    flex: none;
+  }
+
+  .s2__left {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 2px solid #131313;
+    flex-shrink: 0;
+  }
+
+  /* --- Text blocks --- */
+  .s2__div2 {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .cs-text-block {
+    padding: var(--space-4) var(--space-4) !important;
+    flex: none !important;
+  }
+
+  .cs-results-block {
+    padding: var(--space-4) var(--space-4);
+    flex: none;
+    max-height: 320px;
+    overflow-y: auto;
+  }
+
+  /* --- Image columns --- */
+  .cs-col-img {
+    height: 240px;
+    flex: none;
+  }
+
+  .cs-col-imgs {
+    flex: none;
+    height: auto;
+  }
+
+  .cs-img-inline-wrap {
+    height: 200px;
+    flex: none;
+  }
+
+  .cs-img-wrap {
+    height: 240px;
+    flex: none;
+  }
+
+  .cs-siq-early-wrap {
+    height: 240px;
+    flex: none;
+  }
+
   /* --- Case study columns --- */
   .cs-right,
   .cs-right-col,
@@ -496,21 +552,6 @@
     padding: var(--space-5) var(--space-4);
   }
 
-  /* --- Image divs — need fixed height on mobile --- */
-  .cs-v2,
-  .cs-v3,
-  .cs-v4,
-  .cs-v5 {
-    height: 260px;
-    flex: none;
-    width: 100%;
-  }
-
-  .cs-dark-block {
-    height: 80px;
-    flex: none;
-  }
-
   /* --- Gallery --- */
   .cs-gallery-col {
     flex-direction: row;
@@ -521,18 +562,23 @@
     flex: 1;
   }
 
-  /* --- About CV divider — vertical → horizontal --- */
+  /* --- About page: stack CV and Toolkit columns --- */
   .about-col-divider {
     flex: none;
     width: 100%;
-    height: 4px;
+    height: 2px;
     align-self: unset;
+    border-bottom: 2px solid #131313;
   }
 
-  /* --- About CV rows --- */
+  .about-cv-block {
+    padding: var(--space-4) var(--space-4);
+  }
+
   .about-cv-row {
     flex-wrap: wrap;
     gap: 0.25rem;
+    padding: var(--space-3) 0;
   }
 
   .about-cv-company {
@@ -544,9 +590,25 @@
     width: 100%;
   }
 
+  .about-toolkit-row {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: var(--space-3) 0;
+  }
+
   /* --- Pattern div on hero sections --- */
   .cs-pattern {
     height: 160px;
+    flex: none;
+  }
+
+  /* --- Hero right side --- */
+  .cs-right {
+    flex: none;
+  }
+
+  .cs-siq-login {
+    height: 200px;
     flex: none;
   }
 }
@@ -1007,7 +1069,15 @@
     white-space: normal;
   }
 
+  /* Results scrollable on mobile */
   .cs-results-block {
-    overflow-y: visible;
+    max-height: 320px;
+    overflow-y: auto;
+    flex: none;
+  }
+
+  /* Section title font scale */
+  .s2__project-title {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 }

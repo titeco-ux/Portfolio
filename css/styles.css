@@ -2792,48 +2792,81 @@ body.dark-theme .footer__contact:hover {
    ========================================================== */
 @media (max-width: 768px) {
 
+  /* --- Disable scroll snap on mobile --- */
+  html {
+    scroll-snap-type: none;
+  }
+
   /* --- Navbar --- */
   .navbar__links-box { display: none; }
   .navbar__hamburger { display: flex; }
+  .navbar__progress { display: none; }
 
   /* --- Hero --- */
-  .hero__main {
+  .hero__top-row {
     flex-direction: column;
-  }
-
-  .hero__block--dark {
-    flex: none;
-    height: 140px;
-    overflow: hidden;
   }
 
   .hero__block--title {
     padding: var(--space-5) var(--space-4);
+    flex: none;
   }
 
   .hero__title {
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
+  .hero__block--role {
+    border-left: none;
+    border-right: none;
+  }
+
+  .hero__block--dark {
+    flex: 1;
+    min-height: 180px;
+    overflow: hidden;
+  }
+
+  /* --- Sections — remove sticky, allow height to grow --- */
+  .s2 {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+  }
+
   /* --- Section rows --- */
   .s2__row2 {
     flex-direction: column;
+    flex: none;
   }
 
   .s2__left {
     width: 100%;
     border-right: none;
     border-bottom: 2px solid #131313;
-    flex-shrink: unset;
+    flex-shrink: 0;
+  }
+
+  .s2__div2 {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .s2__div3 {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .s2__div4 {
+    height: 140px;
+    flex: none;
   }
 
   .s2__div5 {
-    height: 220px;
+    height: 240px;
     flex: none;
   }
 
   .s2__div5-img {
-    height: 220px;
+    height: 240px;
   }
 
   .s2__tags {
