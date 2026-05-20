@@ -63,41 +63,6 @@ function initCsLightbox() {
   });
 }
 
-// --- Case study section scroll animation (scale + fade + slide) ---
-function initCsSectionSlide() {
-  const sections = [...document.querySelectorAll('.s2')];
-  if (!sections.length) return;
-
-  const vh = window.innerHeight;
-
-  sections.forEach(s => {
-    const inner = s.querySelector('.s2__main');
-    if (inner) {
-      inner.style.willChange = 'transform, opacity';
-      inner.style.transformOrigin = 'top center';
-    }
-  });
-
-  function update() {
-    const scrollY = window.scrollY;
-    sections.forEach((section, i) => {
-      const inner = section.querySelector('.s2__main');
-      if (!inner) return;
-      const sectionStart = i * vh;
-      const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
-      const opacity = 1 - progress;
-      const scale   = 1 - progress * 0.04;
-      const slideX  = progress * 20;
-      inner.style.opacity   = opacity;
-      inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
-    });
-  }
-
-  window.addEventListener('scroll', update, { passive: true });
-  update();
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  initCsSectionSlide();
   initCsLightbox();
 });

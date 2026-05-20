@@ -507,27 +507,10 @@ h1, h2, h3, h4 {
 
 
 
-/* --- Scroll snap --- */
-html {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: var(--navbar-h);
-}
-
-.hero,
-.s2 {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-
-.site-footer {
-  scroll-snap-align: start;
-}
 
 /* --- Section 2 — Veturmusic --- */
 .s2 {
-  position: sticky;
-  top: 0;
-  z-index: 2;
+  position: relative;
   height: 100svh;
   width: 100%;
   background-color: transparent;
@@ -541,7 +524,6 @@ html {
   flex-direction: column;
   align-items: stretch;
   background-color: #eaeaea;
-  transform-origin: top center;
 }
 
 /* Row 1: #01 heading — full width dark */
@@ -609,6 +591,7 @@ html {
   padding: var(--space-6) var(--section-x) var(--space-4);
   flex-shrink: 0;
   border: 2px solid #131313;
+  background-color: #131313;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -618,15 +601,9 @@ html {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(2rem, 5vw, 5rem);
   font-weight: 400;
-  color: #131313;
+  color: #eaeaea;
   letter-spacing: 0.02em;
   line-height: 1;
-  opacity: 0;
-  transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.s2.in-view .s2__project-title {
-  opacity: 1;
 }
 
 .s2__div3 {
@@ -818,9 +795,7 @@ html {
 /* --- Hero Section (Home) --- */
 /* --- Hero Section --- */
 .hero {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+  position: relative;
   background-color: transparent;
   height: 100svh;
   width: 100%;
@@ -844,7 +819,6 @@ html {
   flex-direction: column;
   align-items: stretch;
   background-color: #eaeaea;
-  transform-origin: top center;
 }
 
 /* Top row: title + role side by side */
@@ -2119,55 +2093,6 @@ html {
     --text-8xl: 3.5rem;
   }
 
-  /* Hero */
-  .hero {
-    height: 100svh;
-    min-height: unset;
-    padding: 3rem var(--section-pad-x) 4rem;
-  }
-
-  .hero__image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero__role-link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-4);
-  padding: var(--space-5) var(--section-x);
-  background-color: #FF3F1A;
-  text-decoration: none;
-  width: 100%;
-  transition: background-color 0.15s ease;
-}
-
-.hero__role-link:hover {
-  background-color: #eaeaea;
-}
-
-.hero__role-link:hover .hero__role {
-  color: #FF3F1A;
-}
-
-.hero__role-link:hover .hero__arrow {
-  filter: none;
-}
-
-.hero__role {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: var(--text-2xl);
-  font-weight: 400;
-  color: #eaeaea;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  transition: color 0.15s ease;
-}
 
 .hero__arrow {
   height: 24px;
@@ -2293,93 +2218,9 @@ html {
     --navbar-h: 4rem;
   }
 
-  .navbar {
-    padding: 0 var(--section-x);
-  }
-
-  .navbar__links { display: none; }
-  .navbar__hamburger { display: flex; }
-
-  /* Hero */
-  .hero {
-    height: 100svh;
-    min-height: unset;
-    padding: 2rem var(--section-pad-x) 3rem;
-    text-align: center;
-  }
-
   .hero__title {
     font-size: 2rem;
     line-height: 1.15;
-  }
-
-  .hero__image {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero__role-link {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-4);
-  padding: var(--space-5) var(--section-x);
-  background-color: #FF3F1A;
-  text-decoration: none;
-  width: 100%;
-  transition: background-color 0.15s ease;
-}
-
-.hero__role-link:hover {
-  background-color: #eaeaea;
-}
-
-.hero__role-link:hover .hero__role {
-  color: #FF3F1A;
-}
-
-.hero__role-link:hover .hero__arrow {
-  filter: none;
-}
-
-.hero__role {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: var(--text-2xl);
-  font-weight: 400;
-  color: #eaeaea;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  transition: color 0.15s ease;
-}
-
-.hero__arrow {
-  height: 24px;
-  width: auto;
-  display: block;
-  filter: brightness(0) invert(1);
-  transition: filter 0.15s ease;
-}
-
-.hero__description {
-    font-size: 1rem;
-    max-width: 100%;
-    line-height: 1.6;
-  }
-
-  .hero__buttons {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    justify-content: center;
   }
 
   /* About Snapshot */
@@ -2792,17 +2633,18 @@ body.dark-theme .footer__contact:hover {
    ========================================================== */
 @media (max-width: 768px) {
 
-  /* --- Disable scroll snap on mobile --- */
-  html {
-    scroll-snap-type: none;
-  }
-
   /* --- Navbar --- */
-  .navbar__links-box { display: none; }
-  .navbar__hamburger { display: flex; }
+  .navbar__links-box { display: flex; }
+  .navbar__hamburger { display: none; }
   .navbar__progress { display: none; }
+  .navbar__link-icon { display: none; }
+  .navbar__link { padding: 0 1rem; }
 
   /* --- Hero --- */
+  .hero {
+    height: auto;
+  }
+
   .hero__top-row {
     flex-direction: column;
   }
@@ -2822,22 +2664,22 @@ body.dark-theme .footer__contact:hover {
   }
 
   .hero__block--dark {
-    flex: 1;
-    min-height: 180px;
+    height: 280px;
+    flex: none;
     overflow: hidden;
   }
 
-  /* --- Sections — remove sticky, allow height to grow --- */
+  /* --- Sections --- */
   .s2 {
     position: relative;
-    height: auto;
-    min-height: 100svh;
+    height: 100svh;
   }
 
   /* --- Section rows --- */
+
   .s2__row2 {
     flex-direction: column;
-    flex: none;
+    flex: 1;
   }
 
   .s2__left {
@@ -2861,12 +2703,12 @@ body.dark-theme .footer__contact:hover {
   }
 
   .s2__div5 {
-    height: 240px;
-    flex: none;
+    flex: 1;
+    min-height: 200px;
   }
 
   .s2__div5-img {
-    height: 240px;
+    height: 100%;
   }
 
   .s2__tags {

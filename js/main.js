@@ -286,85 +286,7 @@ function initHeroLetterAnimation() {
 }
 
 
-// --- Project title slide-in on scroll ---
-function initProjectTitleAnimation() {
-  const sections = document.querySelectorAll('.s2, .s3');
-  if (!sections.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        // Remove so it re-animates when scrolled back in
-        entry.target.classList.remove('in-view');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  sections.forEach(s => observer.observe(s));
-}
-
-// --- Section scale + fade on scroll ---
-function initSectionSlide() {
-  const pairs = [
-    { section: document.querySelector('.hero'),  inner: document.querySelector('.hero__main') },
-    { section: document.querySelector('.s2'),    inner: document.querySelector('.s2 .s2__main') },
-    { section: document.querySelector('.s3'),    inner: document.querySelector('.s3 .s2__main') },
-  ].filter(p => p.section && p.inner);
-
-  if (!pairs.length) return;
-
-  const vh = window.innerHeight;
-
-  pairs.forEach(p => {
-    p.inner.style.willChange = 'transform, opacity';
-  });
-
-  function update() {
-    const scrollY = window.scrollY;
-    pairs.forEach(({ inner }, i) => {
-      const sectionStart = i * vh;
-      const progress = Math.max(0, Math.min(1, (scrollY - sectionStart) / vh));
-      const opacity = 1 - progress;
-      const scale   = 1 - progress * 0.04;
-      const slideX  = progress * 20;
-      inner.style.opacity   = opacity;
-      inner.style.transform = `scale(${scale}) translateX(${slideX}px)`;
-    });
-  }
-
-  window.addEventListener('scroll', update, { passive: true });
-  update();
-}
-
-// --- Smooth scroll to end of hero when Projects link clicked ---
-function initProjectsLink() {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  document.querySelectorAll('a[href="index.html#statement"], a[href="#statement"]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = window.innerHeight;
-      const start  = window.scrollY;
-      const duration = 300;
-      const startTime = performance.now();
-
-      function ease(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      }
-
-      function frame(now) {
-        const t = Math.min((now - startTime) / duration, 1);
-        window.scrollTo(0, start + (target - start) * ease(t));
-        if (t < 1) requestAnimationFrame(frame);
-      }
-
-      requestAnimationFrame(frame);
-    });
-  });
-}
 
 // --- Navbar scroll progress bar ---
 function initScrollProgress() {
@@ -395,29 +317,12 @@ function initScrollProgress() {
   if (topLink) {
     topLink.addEventListener('click', e => {
       e.preventDefault();
-      const html = document.documentElement;
-      html.style.scrollSnapType = 'none';
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      const restoreSnap = () => { html.style.scrollSnapType = ''; };
-      window.addEventListener('scrollend', restoreSnap, { once: true });
-      setTimeout(restoreSnap, 1200);
     });
   }
 
   window.addEventListener('scroll', update, { passive: true });
   update();
-}
-
-// --- Scroll to section by hash on load ---
-function initHashScroll() {
-  const hash = window.location.hash;
-  if (!hash) return;
-  const target = document.querySelector(hash);
-  if (!target) return;
-  const sections = [document.querySelector('.hero'), ...document.querySelectorAll('.s2')].filter(Boolean);
-  const index = sections.indexOf(target);
-  if (index < 0) return;
-  requestAnimationFrame(() => window.scrollTo(0, index * window.innerHeight));
 }
 
 // --- Init ---
@@ -430,10 +335,6 @@ function init() {
   initLightbox();
   initHeroDots();
   initHeroLetterAnimation();
-  initProjectTitleAnimation();
-  initSectionSlide();
-  initHashScroll();
-  initProjectsLink();
   initScrollProgress();
 }
 
